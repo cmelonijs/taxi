@@ -2,6 +2,7 @@ import { ClerkProvider } from '@clerk/nextjs'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter, Special_Elite } from 'next/font/google'
+import Navbar from '@/components/Navbar'
 
 // const inter = Inter({ subsets: ['latin'] })
 const specialElite = Special_Elite({
@@ -22,7 +23,10 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={specialElite.className}>{children}</body>
+        <body className={specialElite.className}>
+            <Navbar />
+            {children}
+        </body>
       </html>
     </ClerkProvider>
   )
